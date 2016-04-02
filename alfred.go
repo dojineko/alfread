@@ -55,3 +55,27 @@ func Marshal(items []Item) string {
 
 	return XMLHeader + "\n" + string(str) + "\n"
 }
+
+// AddSubtitle add to Subtitles.
+func (item *Item) AddSubtitle(value string, mod string) {
+	item.Subtitles = append(item.Subtitles, Subtitle{
+		Value: value,
+		Mod:   mod,
+	})
+}
+
+// AddText add to Texts.
+func (item *Item) AddText(value string, typename string) {
+	item.Texts = append(item.Texts, Text{
+		Value: value,
+		Type:  typename,
+	})
+}
+
+// AddIcon add to Icons.
+func (item *Item) AddIcon(value string, typename string) {
+	item.Icons = append(item.Icons, Icon{
+		Value: value,
+		Type:  typename,
+	})
+}
